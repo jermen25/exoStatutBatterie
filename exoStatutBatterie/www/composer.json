@@ -1,0 +1,12 @@
+{
+    "name": "jermen/www",
+    "require": {
+        "components/jquery": "^3.2"
+    },
+    "authors": [
+        {
+            "name": "Ménétrier Jérôme",
+            "email": "menetrier.jerome@hotmail.com"
+        }
+    ]
+}
