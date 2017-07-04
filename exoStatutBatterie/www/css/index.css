@@ -7,7 +7,9 @@ body {
     -webkit-text-size-adjust: none;
     -webkit-user-select: none;
 	background-color:black;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+
+    /*partie mise en commentaire pour permettre un changement de color autre que celui qui est en commentaire */
+    /*background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-webkit-gradient(
@@ -15,7 +17,8 @@ body {
         left top,
         left bottom,
         color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
+        color-stop(0.51, #E4E4E4)*/
+    
     );
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
@@ -67,6 +70,7 @@ h1 {
     font-size:12px;
     margin:10% 0%;
     padding:0% 0%;
+ 
 }
 
 .event.listening {
@@ -97,3 +101,10 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+.niv{
+    color:maroon;
+    font-family:'Californian FB';
+    font-size:x-large;
+}
+  
