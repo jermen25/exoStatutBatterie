@@ -4,6 +4,7 @@
 // puis exécutez "window.location.reload()" dans la console JavaScript.
 (function () {
     "use strict";
+    var niveauCharge;
 
     document.addEventListener( 'deviceready', onDeviceReady.bind( this ), false );
 
@@ -20,11 +21,29 @@
         receivedElement.setAttribute('style', 'display:block;');
 
         //batterie critique
-        window; addEventListener("batterycritical", onBatteryCritical, false);
+        window.addEventListener("batterycritical", onBatteryCritical, false);
 
         //bouton tester
-        window.addEventListener("battterystatus", onBatteryStatus, false);
-        $('#btnBatterie').click(onBatteryStatus)
+        $('#btnBatterie').on('click', function () { window.addEventListener("batterystatus", onBatteryStatus(info.level), false); });
+    };
+
+    function onBatteryStatus(info) {
+        var msgPlugged;
+        if (info.isPlugged) {
+            msgPlugged = 'en charge';
+        }
+        else {
+            msgPlugged = 'sur batterie';
+        };
+        $('#niveau').empty();
+        $('#niveau').html('<p>' + info.level + '%' + msgPlugged +'</p>');
+        niveauCharge = info.level;
+
+    };
+
+    function onBatteryCritical(info) {
+        $('#niveau').empty();
+        $('#niveau').html('<p>Niveau de batterie critique : ' + info.level + "% !Rechargez!</p>");
     };
 
     function onPause() {
@@ -33,12 +52,10 @@
 
     function onResume() {
         // TODO: cette application a été réactivée. Restaurez l'état de l'application ici.
-    };
+        setTimeout(function () {
+            alert('content de vous revoir ! \nVotre batterie en est au niveau' + niveauCharge + '%;')
 
-    function niveau() {
-
-
-
+        }, 0);
     };
 })();
 
