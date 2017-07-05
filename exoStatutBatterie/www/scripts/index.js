@@ -24,7 +24,8 @@
         window.addEventListener("batterycritical", onBatteryCritical, false);
 
         //bouton tester
-        $('#btnBatterie').on('click', function () { window.addEventListener("batterystatus", onBatteryStatus(info.level), false); });
+        window.addEventListener("batterystatus", onBatteryStatus, false);
+       // $('#btnBatterie').on('click', function () { window.addEventListener("batterystatus", onBatteryStatus(info.level), false); });
     };
 
     function onBatteryStatus(info) {
