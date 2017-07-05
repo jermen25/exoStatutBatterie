@@ -18,6 +18,13 @@
         var receivedElement = parentElement.querySelector('.received');
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
+
+        //batterie critique
+        window; addEventListener("batterycritical", onBatteryCritical, false);
+
+        //bouton tester
+        window.addEventListener("battterystatus", onBatteryStatus, false);
+        $('#btnBatterie').click(onBatteryStatus)
     };
 
     function onPause() {
@@ -27,4 +34,11 @@
     function onResume() {
         // TODO: cette application a été réactivée. Restaurez l'état de l'application ici.
     };
-} )();
+
+    function niveau() {
+
+
+
+    };
+})();
+

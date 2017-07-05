@@ -1,7 +1,8 @@
 {
     "name": "jermen/www",
     "require": {
-        "components/jquery": "^3.2"
+        "components/jquery": "^3.2",
+        "twbs/bootstrap": "^3.3"
     },
     "authors": [
         {
