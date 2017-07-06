@@ -31,7 +31,7 @@ body {
     font-family: 'RobotoRegular', 'Droid Sans', 'Segoe UI', Segoe, 'San Francisco', 'Helvetica Neue', Helvetica, Arial, Geneva, sans-serif;
     font-size: 12px;
 }
-
+/*modification image*/
 .app {
     background: url(../images/30157-iconebattle-deamontooluc.png) no-repeat center top; 
     position: absolute;             
@@ -114,7 +114,7 @@ h1 {
     font-family:'Californian FB';
     font-size:x-large;
 }
-
+/*forme circulaire du button*/
 .btn-circle {
     width: 50px;
     height: 50px;
@@ -126,7 +126,7 @@ h1 {
     box-shadow: 0 0 0 1px black inset, 0 0 0 2px rgb(154, 1, 1) inset, 0 8px 0 0 black, 0 8px 0 1px black, 0 8px 8px 1px rgb(30, 31, 117);
     
 }
-
+/*mise en 3d*/
 .btn3d {
     transition: all .08s linear;
     position: relative;
