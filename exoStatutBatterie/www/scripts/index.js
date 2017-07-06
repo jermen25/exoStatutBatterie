@@ -40,6 +40,7 @@
         $('#niveau').html('<p>' + info.level + '%' + msgPlugged +'</p>');
         niveauCharge = info.level;
 
+
     };
 
     function onBatteryCritical(info) {
