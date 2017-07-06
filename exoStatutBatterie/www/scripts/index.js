@@ -5,6 +5,7 @@
 (function () {
     "use strict";
     var niveauCharge;
+    var msgPlugged='';
 
     document.addEventListener( 'deviceready', onDeviceReady.bind( this ), false );
 
@@ -23,26 +24,32 @@
         //batterie critique
         window.addEventListener("batterycritical", onBatteryCritical, false);
 
-        //bouton tester
         window.addEventListener("batterystatus", onBatteryStatus, false);
-       // $('#btnBatterie').on('click', function () { window.addEventListener("batterystatus", onBatteryStatus(info.level), false); });
-    };
 
+        //on recupere automatiquement le niveau de la battery
+        //window.addEventListener("batterycritical", onBatteryStatus, false);
+
+
+        //bouton tester
+        $('#btnBatterie').click(function () {
+            console.log("msplugget :" + msgPlugged + " niveau de charge : " + niveauCharge);
+            $('#niveau').empty();
+            $('#niveau').html('<p>' + niveauCharge + '%' + msgPlugged + '</p>');
+        });            
+    };  
+    //function recuperant le statut de la battery 
     function onBatteryStatus(info) {
-        var msgPlugged;
+             
         if (info.isPlugged) {
             msgPlugged = 'en charge';
         }
         else {
             msgPlugged = 'sur batterie';
         };
-        $('#niveau').empty();
-        $('#niveau').html('<p>' + info.level + '%' + msgPlugged +'</p>');
+        
         niveauCharge = info.level;
-
-
-    };
-
+    }
+    //function d'affichage du message pour battery critique
     function onBatteryCritical(info) {
         $('#niveau').empty();
         $('#niveau').html('<p>Niveau de batterie critique : ' + info.level + "% !Rechargez!</p>");
@@ -60,4 +67,7 @@
         }, 0);
     };
 })();
+
+
+
 
